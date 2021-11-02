@@ -34,12 +34,7 @@ function calcul() {
         }
 
     }
-    else{
-        console.log("error")
-    }
-
-    if(userquery === "-"){
-        
+    else if(userquery === "-") {
         function calcul(a, b){
 
             let result = Number(a - b)
@@ -47,13 +42,8 @@ function calcul() {
                 console.log(result)
                 document.getElementById('results').innerHTML = result;
         }
-
     }
-    else{
-        console.log("error")
-    }
-
-    if(userquery === "x"){
+    else if(userquery === "x"){
         
         function calcul(a, b){
 
@@ -64,11 +54,7 @@ function calcul() {
         }
 
     }
-    else{
-        console.log("error")
-    }
-
-    if(userquery === "/"){
+    else if(userquery === "/"){
         
         function calcul(a, b){
 
