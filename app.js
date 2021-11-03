@@ -12,66 +12,49 @@
 // result := a + b
 
 
+let result = 0;
 
-function calcul() {
-
-    let userquerya = document.getElementById('a').value;
-    userquerya = Number(userquerya);
+function calcul(e) {
+    
+    let userquerya = Number(document.getElementById('a').value);
     let userquery = document.getElementById('userquery').value;
-    let userqueryb = document.getElementById('b').value;
-    userqueryb = Number(userqueryb);
-    // console.log(userquerya);
-    // console.log(userquery);
-    // console.log(userqueryb);
+    let userqueryb = Number(document.getElementById('b').value);
+    let affichage = document.getElementById('results');
 
     if(userquery === "+"){
+
+        result = userquerya + userqueryb;
+        affichage.innerHTML = result;
+        console.log(result)
         
-        function calcul(a, b){
-            let result = Number(a + b)
-
-            console.log(result)
-            document.getElementById('results').innerHTML = result;
-        }
-
     }
-    else if(userquery === "-") {
-        function calcul(a, b){
+    else if(userquery === "-"){
 
-            let result = Number(a - b)
+        result = userquerya - userqueryb;
+        affichage.innerHTML = result;
 
-                console.log(result)
-                document.getElementById('results').innerHTML = result;
-        }
     }
     else if(userquery === "x"){
-        
-        function calcul(a, b){
 
-            let result = Number(a * b)
-
-                console.log(result)
-                document.getElementById('results').innerHTML = result;
-        }
-
+        result = userquerya * userqueryb;
+        affichage.innerHTML = result;
+     
     }
     else if(userquery === "/"){
-        
-        function calcul(a, b){
 
-            let result = Number(a / b)
-
-                console.log(result)
-                document.getElementById('results').innerHTML = result;
-        }
+        result = userquerya / userqueryb;
+        affichage.innerHTML = result;
 
     }
     else{
         console.log("error")
     }
+    e.preventDefault()
+};
 
-    calcul(userquerya, userqueryb);
+document.getElementById('test').addEventListener("click",calcul);
 
-}
+
 
 
 
